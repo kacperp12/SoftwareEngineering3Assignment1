@@ -8,14 +8,11 @@ public class Module {
     private String name;
     private String id;
     private Student[] students;
-    private CourseProgramme[] courseAssociation;
+    private CourseProgramme courseAssociation;
     private Lecturer lecturer;
     
-    public Module(String n, String id, Student[] s, CourseProgramme[] c, Lecturer l) {
+    public Module(String n, String id) {
         setName(n);
-        setStudents(s);
-        setCourseAssociation(c);
-        setLecturer(l);
         this.id = id;
     }
 
@@ -32,7 +29,7 @@ public class Module {
         return students;
     }
 
-    public CourseProgramme[] getCourseAssociation() {
+    public CourseProgramme getCourseAssociation() {
         return courseAssociation;
     }
 
@@ -50,7 +47,7 @@ public class Module {
         this.students = students;
     }
 
-    public void setCourseAssociation(CourseProgramme[] courseAssociation) {
+    public void setCourseAssociation(CourseProgramme courseAssociation) {
         this.courseAssociation = courseAssociation;
     }
 

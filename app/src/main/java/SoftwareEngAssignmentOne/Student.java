@@ -7,16 +7,13 @@ package SoftwareEngAssignmentOne;
 public class Student {
     private String name;
     private String dob;
-    private CourseProgramme[] courses;
+    private CourseProgramme course;
     private Module[] modules;
     private int id;
     private int age;
     
-    public Student(String n, String d, CourseProgramme[] c, Module[] m,
-            int id, int age) {
+    public Student(String n, String d, int id, int age) {
         setName(n);
-        setCourses(c);
-        setModules(m);
         dob = d;
         this.id = id;
         this.age = age;
@@ -36,8 +33,8 @@ public class Student {
         return name + age;
     }
 
-    public CourseProgramme[] getCourses() {
-        return courses;
+    public CourseProgramme getCourse() {
+        return course;
     }
 
     public Module[] getModules() {
@@ -58,8 +55,8 @@ public class Student {
         this.name = name;
     }
 
-    public void setCourses(CourseProgramme[] courses) {
-        this.courses = courses;
+    public void setCourse(CourseProgramme course) {
+        this.course = course;
     }
 
     public void setModules(Module[] modules) {

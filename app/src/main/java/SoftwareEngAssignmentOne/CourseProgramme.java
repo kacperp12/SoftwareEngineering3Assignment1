@@ -13,10 +13,8 @@ public class CourseProgramme {
     private DateTime startDate;
     private DateTime endDate;
 
-    public CourseProgramme(String n, Module[] m, Student[] s, DateTime sDate, DateTime eDate) {
+    public CourseProgramme(String n, DateTime sDate, DateTime eDate) {
         setName(n);
-        setModules(m);
-        setStudents(s);
         startDate = sDate;
         endDate = eDate;
     }
