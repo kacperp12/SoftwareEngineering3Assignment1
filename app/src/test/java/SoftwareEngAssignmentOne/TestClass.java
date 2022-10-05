@@ -94,4 +94,95 @@ public class TestClass {
         assertEquals(usernames[1], "Bill21");
         assertEquals(usernames[2], "Chap22");
     }
+    
+    @Test
+    void getStudentName() {
+        String[] names = new String[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            names[i] = student.getName();
+            i++;
+        }
+        
+        assertEquals(names[0], "Tom");
+        assertEquals(names[1], "Bill");
+        assertEquals(names[2], "Chap");
+    }
+    
+    @Test
+    void getStudentDob() {
+        String[] dob = new String[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            dob[i] = student.getDob();
+            i++;
+        }
+        
+        assertEquals(dob[0], "25/09/2000");
+        assertEquals(dob[1], "26/08/2001");
+        assertEquals(dob[2], "27/07/2000");
+    }
+    
+    @Test
+    void getStudentID() {
+        int[] id = new int[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            id[i] = student.getId();
+            i++;
+        }
+        
+        assertEquals(id[0], 19471182);
+        assertEquals(id[1], 19471183);
+        assertEquals(id[2], 19471184);
+    }
+    
+    @Test
+    void getStudentAge() {
+        int[] age = new int[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            age[i] = student.getAge();
+            i++;
+        }
+        
+        assertEquals(age[0], 22);
+        assertEquals(age[1], 21);
+        assertEquals(age[2], 22);
+    }
+    
+    @Test
+    void getStudentCourse() {
+        CourseProgramme[] course = new CourseProgramme[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            course[i] = student.getCourse();
+            i++;
+        }
+        
+        assertEquals(course[0].getName(), "Computer Science");
+        assertEquals(course[1].getName(), "Computer Science");
+        assertEquals(course[2].getName(), "Computer Science");
+    }
+    
+    //FINISH
+    @Test
+    void getStudentModules() {
+        CourseProgramme[] course = new CourseProgramme[3];
+        int i = 0;
+        
+        for(Student student : students) {
+            course[i] = student.getCourse();
+            i++;
+        }
+        
+        assertEquals(course[0].getName(), "Computer Science");
+        assertEquals(course[1].getName(), "Computer Science");
+        assertEquals(course[2].getName(), "Computer Science");
+    }
 }
