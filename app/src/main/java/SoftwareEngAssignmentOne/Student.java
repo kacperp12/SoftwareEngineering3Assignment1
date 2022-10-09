@@ -68,7 +68,7 @@ public class Student {
     public String toString() {
         String str = "";
         str += "Student Information\n" +
-                "----------------------" +
+                "----------------------\n" +
                 "Name: " + getName() + "\n" +
                 "Date of Birth: " + getDob() + "\n" +
                 "ID: " + getId() + "\n" + 

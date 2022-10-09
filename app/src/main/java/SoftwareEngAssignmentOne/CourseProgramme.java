@@ -59,6 +59,7 @@ public class CourseProgramme {
     public String toString() {
         String str = "";
         str += "Course Information\n" +
+                "----------------------\n" +
                 "Name: " + getName() + "\n" +
                 "Start Date: " + getStartDate() + "\n" +
                 "End Date: " + getEndDate() + "\n";
