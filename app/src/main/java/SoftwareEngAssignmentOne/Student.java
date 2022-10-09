@@ -63,4 +63,25 @@ public class Student {
     public void addModules(Module module) {
         modules.add(module);
     }
+    
+    @Override
+    public String toString() {
+        String str = "";
+        str += "Student Information\n" +
+                "----------------------" +
+                "Name: " + getName() + "\n" +
+                "Date of Birth: " + getDob() + "\n" +
+                "ID: " + getId() + "\n" + 
+                "Age: " + getAge() + "\n";
+        
+        for(CourseProgramme course : courses) {
+            str += "Course: " + course.getName() + "\n";
+        }
+        
+        for(Module module : modules) {
+            str += "Modules: " + module.getName() + "\n";
+        }
+        
+        return str;
+    }
 }

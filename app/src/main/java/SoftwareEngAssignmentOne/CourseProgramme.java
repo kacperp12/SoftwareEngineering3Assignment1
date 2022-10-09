@@ -54,4 +54,23 @@ public class CourseProgramme {
     public void addStudents(Student student) {
         students.add(student);
     }
+    
+    @Override
+    public String toString() {
+        String str = "";
+        str += "Course Information\n" +
+                "Name: " + getName() + "\n" +
+                "Start Date: " + getStartDate() + "\n" +
+                "End Date: " + getEndDate() + "\n";
+        
+        for(Module module : modules) {
+            str += "Module Name:" + module.getName() + "\n";
+        }
+        
+        for(Student student : students) {
+            str += "Student Name: " + student.getName() + "\n";
+        }
+        
+        return str;
+    }
 }
