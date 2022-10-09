@@ -1,15 +1,12 @@
 package SoftwareEngAssignmentOne;
 
+import java.util.ArrayList;
 import org.joda.time.DateTime;
 
-/**
- *
- * @author Kacper
- */
 public class CourseProgramme {
     private String name;
-    private Module[] modules;
-    private Student[] students;
+    private ArrayList<Module> modules;
+    private ArrayList<Student> students;
     private DateTime startDate;
     private DateTime endDate;
 
@@ -17,6 +14,9 @@ public class CourseProgramme {
         setName(n);
         startDate = sDate;
         endDate = eDate;
+        
+        this.modules = new ArrayList<>();
+        this.students = new ArrayList<>();
     }
 
     //accessor methods
@@ -24,11 +24,11 @@ public class CourseProgramme {
         return name;
     }
 
-    public Module[] getModules() {
+    public ArrayList<Module> getModules() {
         return modules;
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
@@ -47,11 +47,11 @@ public class CourseProgramme {
         this.name = name;
     }
 
-    public void setModules(Module[] modules) {
-        this.modules = modules;
+    public void addModules(Module module) {
+        modules.add(module);
     }
 
-    public void setStudents(Student[] students) {
-        this.students = students;
+    public void addStudents(Student student) {
+        students.add(student);
     }
 }

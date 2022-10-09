@@ -1,19 +1,21 @@
 package SoftwareEngAssignmentOne;
 
-/**
- *
- * @author Kacper
- */
+import java.util.ArrayList;
+
 public class Module {
     private String name;
     private String id;
-    private Student[] students;
-    private CourseProgramme courseAssociation;
+    private ArrayList<Student> students;
+    private ArrayList<CourseProgramme> courseAssociation;
     private Lecturer lecturer;
     
-    public Module(String n, String id) {
+    public Module(String n, String id, Lecturer lecturer) {
         setName(n);
         this.id = id;
+        this.lecturer = lecturer;
+        
+        this.students = new ArrayList<>();
+        this.courseAssociation = new ArrayList<>();
     }
 
     //accessor methods
@@ -25,11 +27,11 @@ public class Module {
         return id;
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public CourseProgramme getCourseAssociation() {
+    public ArrayList<CourseProgramme> getCourseAssociation() {
         return courseAssociation;
     }
 
@@ -43,17 +45,15 @@ public class Module {
         this.name = name;
     }
 
-    public void setStudents(Student[] students) {
-        this.students = students;
+    public void addStudents(Student student) {
+        students.add(student);
     }
 
-    public void setCourseAssociation(CourseProgramme courseAssociation) {
-        this.courseAssociation = courseAssociation;
+    public void addCourse(CourseProgramme course) {
+        courseAssociation.add(course);
     }
 
     public void setLecturer(Lecturer lecturer) {
         this.lecturer = lecturer;
     }
-    
-    
 }

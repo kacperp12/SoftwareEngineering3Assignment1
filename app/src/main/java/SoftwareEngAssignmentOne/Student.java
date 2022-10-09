@@ -1,14 +1,12 @@
 package SoftwareEngAssignmentOne;
 
-/**
- *
- * @author Kacper
- */
+import java.util.ArrayList;
+
 public class Student {
     private String name;
     private String dob;
-    private CourseProgramme course;
-    private Module[] modules;
+    private ArrayList<CourseProgramme> courses;
+    private ArrayList<Module> modules;
     private int id;
     private int age;
     
@@ -17,6 +15,9 @@ public class Student {
         dob = d;
         this.id = id;
         this.age = age;
+        
+        this.courses = new ArrayList<>();
+        this.modules = new ArrayList<>();
     }
 
     //accessor methods
@@ -33,11 +34,11 @@ public class Student {
         return name + age;
     }
 
-    public CourseProgramme getCourse() {
-        return course;
+    public ArrayList<CourseProgramme> getCourse() {
+        return courses;
     }
 
-    public Module[] getModules() {
+    public ArrayList<Module> getModules() {
         return modules;
     }
 
@@ -55,12 +56,11 @@ public class Student {
         this.name = name;
     }
 
-    public void setCourse(CourseProgramme course) {
-        this.course = course;
+    public void addCourse(CourseProgramme course) {
+        courses.add(course);
     }
 
-    public void setModules(Module[] modules) {
-        this.modules = modules;
+    public void addModules(Module module) {
+        modules.add(module);
     }
-    
 }
