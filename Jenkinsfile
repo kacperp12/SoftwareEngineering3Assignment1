@@ -2,27 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Compile')
+        {
             steps {
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                bat './gradlew build'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'make check || true' 
-                junit '**/target/*.xml'
-            }
-        }
-        stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
-                sh 'make publish'
-            }
+    }
+    post {
+        success {
+            deploy(adapters:[tomcat9(url:"http://localhost:8181", credentialsId:"token-tomcat", path:"")], war:"**/build/libs/*.war", contextPath:"")
         }
     }
 }
