@@ -10,7 +10,9 @@ pipeline {
         }
         stage('Deploy')
         {
-            deploy(adapters: [tomcat9(url:"http://localhost:8080", credentialsId:"tomcat", path:"")], war:"**/build/libs/*.war", contextPath:"")
+            steps {
+                deploy(adapters: [tomcat9(url:"http://localhost:8080", credentialsId:"tomcat", path:"")], war:"**/build/libs/*.war", contextPath:"")
+            }
         }
     }
 }
