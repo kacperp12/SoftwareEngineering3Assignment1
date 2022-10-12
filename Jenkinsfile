@@ -9,9 +9,5 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            deploy(adapters:[tomcat(url:"http://localhost:8080", credentialsId:"token-tomcat", path:"")], war:"**/build/libs/*.war", contextPath:"")
-        }
-    }
+    
 }
